@@ -1,4 +1,77 @@
-/*Voce styles */
-body {
+/* Voce — quiet luxury / high-tech */
+
+:root {
+  --color-black: #0a0a0b;      /* page background */
+  --color-surface: #131315;    /* subtle raised surfaces */
+  --color-white: #f4f1ea;      /* warm white text */
+  --color-muted: #83827f;      /* secondary text */
+  --color-bronze: #b08c5a;     /* bronze accent */
+  --color-gold: #d8b98a;       /* bright gold highlight */
+  --color-line: rgba(244, 241, 234, 0.14);
+
+  --font: "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+}
+
+* {
   margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(ellipse 80% 50% at 50% 120%, var(--color-surface), var(--color-black));
+  color: var(--color-white);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  text-align: center;
+  padding: 2rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--color-bronze);
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  font-weight: 200;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+.lead {
+  max-width: 26rem;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+.rule {
+  width: 3rem;
+  height: 1px;
+  background: var(--color-gold);
+  margin: 2.5rem auto;
+}
+
+.hint {
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+::selection {
+  background: var(--color-bronze);
+  color: var(--color-black);
 }
