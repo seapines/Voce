@@ -23,6 +23,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Fingerprint CSS
+        run: |
+          HASH=$(sha256sum style.css | cut -c1-8)
+          mv style.css "style.$HASH.css"
+          sed -i "s/style\.css/style.$HASH.css/" index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
