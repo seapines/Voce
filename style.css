@@ -27,48 +27,21 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-main {
-  text-align: center;
-  padding: 2rem;
-}
-
-.eyebrow {
-  font-size: 0.75rem;
-  letter-spacing: 0.45em;
-  text-transform: uppercase;
-  color: var(--color-bronze);
-  margin-bottom: 1.5rem;
-}
-
 h1 {
-  font-size: clamp(3rem, 9vw, 5.5rem);
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 200;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  margin-bottom: 1.5rem;
+  letter-spacing: 0.45em;
+  text-indent: 0.45em; /* balances trailing tracking, keeps word centered */
+  text-transform: uppercase;
 }
 
-.lead {
-  max-width: 26rem;
-  margin: 0 auto;
-  font-size: 0.95rem;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--color-muted);
-}
-
-.rule {
-  width: 3rem;
+h1::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
   height: 1px;
   background: var(--color-gold);
-  margin: 2.5rem auto;
-}
-
-.hint {
-  font-size: 0.7rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--color-muted);
+  margin: 2.5rem auto 0;
 }
 
 ::selection {
