@@ -8,20 +8,22 @@ tooling or framework — keep it that way.
 ## Structure
 - `index.html` — English page (default)
 - `ru/index.html` — Russian page
+- `de/index.html` — German page
 - `it/index.html` — Italian page
-- `style.css` — single shared stylesheet, linked by all three pages
+- `style.css` — single shared stylesheet, linked by every language page
 - `img/` — logos (included in the repo; do not hotlink third-party images)
 - `.github/workflows/pages.yml` — GitHub Pages deploy workflow. At build time it
   fingerprints `style.css` (hash-renamed) and rewrites the stylesheet link in
-  **all three** `index.html` files, so translated pages must never be excluded
-  from that step.
+  **every** `index.html` file, so also new language pages must be added to
+  that step's sed command.
 
-## The single most important rule: keep the three pages in sync
-The three language pages must always mirror each other:
+## The single most important rule: keep the language pages in sync
+All language pages must always mirror each other:
 
 - Every content change (copy, products, sections, structure, attributes,
-  accessibility labels) MUST be applied to `index.html`, `ru/index.html`, and
-  `it/index.html` in the same commit.
+  accessibility labels) MUST be applied to every language page (`index.html`,
+  `ru/index.html`, `de/index.html`, `it/index.html`) in the same commit.
+  Files are enumerated in exactly that order wherever a page list is needed.
 - English is the source of truth. Translate into natural, marketing-grade
   Russian and Italian — not word by word. Product names ("VOCE Matrix-4",
   "VOCE Amp-Pro", "VOCE Aqua-8") and brand terms (Control4, Home Assistant,
