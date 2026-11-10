@@ -2,12 +2,12 @@
 
 :root {
   --color-black: #0a0a0b;      /* page background */
+  --color-grey: #18181b;       /* alternate splash background */
   --color-surface: #131315;    /* subtle raised surfaces */
   --color-white: #f4f1ea;      /* warm white text */
   --color-muted: #83827f;      /* secondary text */
   --color-bronze: #b08c5a;     /* bronze accent */
   --color-gold: #d8b98a;       /* bright gold highlight */
-  --color-line: rgba(244, 241, 234, 0.14);
 
   --font: "Helvetica Neue", "Segoe UI", Arial, sans-serif;
 }
@@ -52,8 +52,8 @@ body {
   left: 50%;
   width: 1.5rem;
   height: 1.5rem;
-  border-right: 1px solid var(--color-muted);
-  border-bottom: 1px solid var(--color-muted);
+  border-right: 2px solid var(--color-muted);
+  border-bottom: 2px solid var(--color-muted);
   transform: translateX(-50%) rotate(45deg);
   transition: border-color 0.3s ease;
 }
@@ -63,10 +63,8 @@ body {
 }
 
 .why,
-.products,
-.integration,
-.contact {
-  border-top: 1px solid var(--color-line);
+.integration {
+  background: var(--color-grey);
 }
 
 /* — Opening — */
@@ -137,6 +135,87 @@ strong {
 
 .why h2:first-of-type {
   margin-top: 0;
+}
+
+/* — Products — */
+
+.product-grid {
+  width: 100%;
+  max-width: 68rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 3.5rem;
+}
+
+.product img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.product h3 {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 450;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.product p {
+  margin: 0.75rem auto 0;
+  max-width: 22rem;
+  font-size: 0.9rem;
+  font-weight: 350;
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+/* — Integration logos — */
+
+.logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.logo-tile {
+  background: #ffffff;
+  padding: 1.75rem 2.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 2px;
+}
+
+.logo {
+  height: 2.75rem;
+  max-width: 10rem;
+  object-fit: contain;
+}
+
+/* — Contact — */
+
+/* — Contact: centered content, footer pinned to the bottom — */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--color-muted);
 }
 
 ::selection {
