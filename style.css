@@ -179,8 +179,8 @@ strong {
 
 /* Stacked products: thin golden hairline between them */
 .product + .product {
-  margin-top: 1.5rem;
-  padding-top: 4.5rem;
+  margin-top: 3.5rem;
+  padding-top: 3.5rem;
   position: relative;
 }
 
