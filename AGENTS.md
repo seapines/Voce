@@ -7,7 +7,6 @@ tooling or framework — keep it that way.
 
 ## Structure
 - `index.html` — English page (default)
-- `ru/index.html` — Russian page
 - `de/index.html` — German page
 - `it/index.html` — Italian page
 - `style.css` — single shared stylesheet, linked by every language page
@@ -22,15 +21,15 @@ All language pages must always mirror each other:
 
 - Every content change (copy, products, sections, structure, attributes,
   accessibility labels) MUST be applied to every language page (`index.html`,
-  `ru/index.html`, `de/index.html`, `it/index.html`) in the same commit.
+  `de/index.html`, `it/index.html`) in the same commit.
   Files are enumerated in exactly that order wherever a page list is needed.
 - English is the source of truth. Translate into natural, marketing-grade
-  Russian and Italian — not word by word. Product names ("VOCE Matrix-4",
+  German and Italian — not word by word. Product names ("VOCE Matrix-4",
   "VOCE Amp-Pro", "VOCE Aqua-8") and brand terms (Control4, Home Assistant,
   KNX, Hi-Res, DLNA, AirPlay, Dealer Kit, B2B) stay untranslated.
 - The language switcher (`nav.lang`, top right) must appear on every page with
-  the current language marked by `span.current` — EN/RU/IT links comparing to
-  `../` / `../ru/` / `../it/` relative to the page.
+  the current language marked by `span.current` — EN/DE/IT links relative to
+  the page (`../`, `de/`, `it/`, `../de/`, `../it/` as appropriate).
 
 ## Styling conventions
 - All colors are CSS variables in `:root` in `style.css`. Add new colors there.
